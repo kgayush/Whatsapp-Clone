@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="header">
+    <div class="avatarContainer">
+      <div class="picture">
+        <img src="../../assets/no-user.svg" />
+      </div>
+      <div class="name">
+        <h6>ayush</h6>
+        <p>hi</p>
+      </div>
+    </div>
+    <div class="actionContainer"></div>
+  </div>
+  <div class="content">
+    <div
+      class="message"
+      [ngClass]="{ me: message.me }"
+      *ngFor="let message of conversation.messages"
+    >
+      <div class="messageContent">
+        {{ message.body }}
+        <div class="time">{{ message.time }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="emoji">
+      <img src="../../assets/happy.png" />
+    </div>
+    <div class="textarea">
+      <textarea
+        placeholder=" Type a message"
+        (keyup.enter)="messageSubmitted($event)"
+      ></textarea>
+    </div>
+    <div class="micIcon">
+      <img src="../../assets/mic.png" />
+    </div>
+  </div>
+</div>
